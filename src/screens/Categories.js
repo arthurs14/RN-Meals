@@ -1,13 +1,8 @@
 import React, { useLayoutEffect } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 import { CATEGORIES } from '../data/data';
+import CategoryGrid from '../components/CategoryGrid';
 
 const Categories = ({ navigation }) => {
   useLayoutEffect(() => {
@@ -18,17 +13,15 @@ const Categories = ({ navigation }) => {
 
   const renderGridItem = itemData => {
     return (
-      <TouchableOpacity
-        style={styles.gridItem}
-        onPress={() =>
+      <CategoryGrid
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onSelect={() => {
           navigation.navigate('Category Meals', {
             categoryId: itemData.item.id,
-          })
-        }>
-        <View>
-          <Text>{itemData.item.title}</Text>
-        </View>
-      </TouchableOpacity>
+          });
+        }}
+      />
     );
   };
 
