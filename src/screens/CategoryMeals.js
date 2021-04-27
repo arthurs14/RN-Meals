@@ -5,10 +5,11 @@ const CategoryMeals = ({ navigation }) => {
   return (
     <View style={styles.screen}>
       <Text>CategoryMeals Screen</Text>
-      <Button 
+      <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Meal Detail')}
       />
+      <Button title="Go Back" onPress={() => navigation.goBack()} />
     </View>
   );
 };
