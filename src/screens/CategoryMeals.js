@@ -6,9 +6,14 @@ import { CATEGORIES } from '../data/data';
 const CategoryMeals = ({ navigation, route }) => {
   const { categoryId } = route.params;
 
+  const selectedCategory = CATEGORIES.find(
+    category => category.id === categoryId,
+  );
+
   return (
     <View style={styles.screen}>
       <Text>CategoryMeals Screen</Text>
+      <Text>{selectedCategory.title}</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Meal Detail')}
