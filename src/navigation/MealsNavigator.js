@@ -21,13 +21,7 @@ const StackNavigator = () => {
         headerTintColor:
           Platform.OS === 'android' ? 'white' : Colors.primaryColor,
       }}>
-      <Stack.Screen
-        name="Categories"
-        component={CategoriesScreen}
-        options={{
-          title: 'Meal Categories',
-        }}
-      />
+      <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="Category Meals" component={CategoryMealsScreen} />
       <Stack.Screen name="Meal Detail" component={MealDetailScreen} />
     </Stack.Navigator>

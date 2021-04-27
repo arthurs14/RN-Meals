@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,12 @@ import {
 import { CATEGORIES } from '../data/data';
 
 const Categories = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Meal Categories',
+    });
+  }, [navigation]);
+
   const renderGridItem = itemData => {
     return (
       <TouchableOpacity
