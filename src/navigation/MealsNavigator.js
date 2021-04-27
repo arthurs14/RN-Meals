@@ -12,7 +12,7 @@ const StackNavigator = () => {
     <Stack.Navigator initialRouteName="Categories">
       <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="Category Meals" component={CategoryMealsScreen} />
-      <Stack.Screen name="MealDetail" component={MealDetailScreen} />
+      <Stack.Screen name="Meal Detail" component={MealDetailScreen} />
     </Stack.Navigator>
   );
 };
