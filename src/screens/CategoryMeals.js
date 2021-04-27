@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const CategoryMeals = ({ navigation }) => {
+import { CATEGORIES } from '../data/data';
+
+const CategoryMeals = ({ navigation, route }) => {
+  const { categoryId } = route.params;
+
   return (
     <View style={styles.screen}>
       <Text>CategoryMeals Screen</Text>
