@@ -1,8 +1,7 @@
 import React, { useLayoutEffect } from 'react';
-import { View, Text, Button, StyleSheet, Platform } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 import { CATEGORIES } from '../data/data';
-import Colors from '../constants/Colors';
 
 const CategoryMeals = ({ navigation, route }) => {
   const { categoryId } = route.params;
@@ -15,12 +14,6 @@ const CategoryMeals = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: selectedCategory.title,
-      headerStyle: {
-        backgroundColor:
-          Platform.OS === 'android' ? Colors.primaryColor : 'white',
-      },
-      headerTintColor:
-        Platform.OS === 'android' ? 'white' : Colors.primaryColor,
     });
   }, [navigation, selectedCategory]);
 
