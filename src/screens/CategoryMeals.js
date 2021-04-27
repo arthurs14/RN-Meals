@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 import { CATEGORIES } from '../data/data';
@@ -9,6 +9,13 @@ const CategoryMeals = ({ navigation, route }) => {
   const selectedCategory = CATEGORIES.find(
     category => category.id === categoryId,
   );
+
+  // Changes header title to match the category
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: selectedCategory.title,
+    });
+  }, [navigation, selectedCategory]);
 
   return (
     <View style={styles.screen}>
