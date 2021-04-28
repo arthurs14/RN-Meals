@@ -23,7 +23,7 @@ class Meal {
     this.ingredients = ingredients;
     this.steps = steps;
     this.isGlutenFree = isGlutenFree;
-    this.isVegas = isVegan;
+    this.isVegan = isVegan;
     this.isLactoseFree = isLactoseFree;
   }
 }
