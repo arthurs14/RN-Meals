@@ -14,6 +14,14 @@ const CategoryMeals = ({ navigation, route }) => {
     meal => meal.categoryIds.indexOf(categoryId) >= 0,
   );
 
+  const renderMealItem = itemData => {
+    return (
+      <View>
+        <Text>{itemData.item.title}</Text>
+      </View>
+    );
+  };
+
   // Changes header styling and title to match the category
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -23,13 +31,11 @@ const CategoryMeals = ({ navigation, route }) => {
 
   return (
     <View style={styles.screen}>
-      <Text>CategoryMeals Screen</Text>
-      <Text>{selectedCategory.title}</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Meal Detail')}
+      <FlatList
+        data={displayMeals}
+        keyExtractor={(item, index) => item.id}
+        renderItem={renderMealItem}
       />
-      <Button title="Go Back" onPress={() => navigation.goBack()} />
     </View>
   );
 };
