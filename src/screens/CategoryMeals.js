@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { View, FlatList, Text, StyleSheet } from 'react-native';
 
 import { CATEGORIES, MEALS } from '../data/data';
+import MealItem from '../components/MealItem';
 
 const CategoryMeals = ({ navigation, route }) => {
   const { categoryId } = route.params;
@@ -15,11 +16,7 @@ const CategoryMeals = ({ navigation, route }) => {
   );
 
   const renderMealItem = itemData => {
-    return (
-      <View>
-        <Text>{itemData.item.title}</Text>
-      </View>
-    );
+    return <MealItem title={itemData.item.title} onSelectMeal={() => {}} />;
   };
 
   // Changes header styling and title to match the category

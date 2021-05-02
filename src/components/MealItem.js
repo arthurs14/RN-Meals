@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const MealItem = ({ onSelectMeal }) => {
+const MealItem = ({ title, onSelectMeal }) => {
   return (
     <View style={styles.mealItem}>
       <TouchableOpacity onPress={onSelectMeal}>
         <View>
           <View style={styles.meal}>
-            <Text>{}</Text>
+            <Text>{title}</Text>
           </View>
           <View style={styles.meal}></View>
         </View>
