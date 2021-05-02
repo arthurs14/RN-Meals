@@ -16,13 +16,7 @@ const CategoryMeals = ({ navigation, route }) => {
   );
 
   const renderMealItem = itemData => {
-    return (
-      <MealItem
-        title={itemData.item.title}
-        onSelectMeal={() => {}}
-        duration={itemData.item.duration}
-      />
-    );
+    return <MealItem meal={itemData} onSelectMeal={() => {}} />;
   };
 
   // Changes header styling and title to match the category
