@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#ccc',
     marginTop: 10,
+    borderRadius: 10,
+    overflow: 'hidden',
   },
   bgImage: {
     width: '100%',
@@ -50,11 +52,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   mealHeader: {
-    height: '90%',
+    height: '85%',
   },
   mealDetail: {
     paddingHorizontal: 10,
     justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '15%',
   },
   titleContainer: {
     backgroundColor: 'rgba(0,0,0,0.5)',
