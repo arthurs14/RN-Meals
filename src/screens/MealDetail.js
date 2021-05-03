@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { useLayoutEffect } from 'react/cjs/react.development';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import { MEALS } from '../data/data';
+import HeaderButton from '../components/HeaderButton';
 
 const MealDetail = ({ navigation, route }) => {
   const { mealId } = route.params;
@@ -12,7 +14,15 @@ const MealDetail = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: selectedMeal.title,
-      headerRight: () => <Text>FAV!</Text>,
+      headerRight: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Favorite"
+            iconName={'ios-star'}
+            onPress={() => console.log('Mark as favorite!')}
+          />
+        </HeaderButtons>
+      ),
     });
   }, [navigation, selectedMeal]);
 
