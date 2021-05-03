@@ -12,6 +12,7 @@ const MealDetail = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: selectedMeal.title,
+      headerRight: () => <Text>FAV!</Text>,
     });
   }, [navigation, selectedMeal]);
 
