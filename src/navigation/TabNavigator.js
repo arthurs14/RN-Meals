@@ -15,24 +15,25 @@ const Tab =
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: tabInfo => {
-          if (route.name === 'Meals') {
-            return (
-              <Icon name="ios-restaurant" size={25} color={tabInfo.color} />
-            );
-          } else if (route.name === 'My Favorites') {
-            return <Icon name="ios-star" size={25} color={tabInfo.color} />;
-          }
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: Colors.accentColor,
-        //inactiveTintColor: 'gray',
-      }}>
-      <Tab.Screen name="Meals" component={AllMealsStack} />
-      <Tab.Screen name="My Favorites" component={Favorites} />
+    <Tab.Navigator tabBarOptions={{ activeTintColor: Colors.accentColor }}>
+      <Tab.Screen
+        name="Meals"
+        component={AllMealsStack}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="ios-restaurant" size={25} color={tabInfo.color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="My Favorites"
+        component={Favorites}
+        options={{
+          tabBarIcon: tabInfo => (
+            <Icon name="ios-star" size={25} color={tabInfo.color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
