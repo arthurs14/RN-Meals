@@ -17,7 +17,8 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       shifting={true}
-      tabBarOptions={{ activeTintColor: Colors.accentColor }}>
+      tabBarOptions={{ activeTintColor: Colors.accentColor }}
+      barStyle={{ backgroundColor: Colors.primaryColor }}>
       <Tab.Screen
         name="Meals"
         component={AllMealsStack}
