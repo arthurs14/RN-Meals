@@ -1144,6 +1144,11 @@
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.0-next.5.tgz#bc2e05c19aa2ffc36c14fc8a7f539b44304e983e"
   integrity sha512-1IpmuU8akVOjy+zj8ROZ/HVRzdTzv1X9aV9rmBWjs3DFps+k+6HYiSZT/UmSBv3NRYAcjIk46SPGUTdnVtxFmA==
 
+"@react-navigation/material-bottom-tabs@^6.0.0-next.3":
+  version "6.0.0-next.3"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-bottom-tabs/-/material-bottom-tabs-6.0.0-next.3.tgz#88133219542e6b3f851b524b3f07e44052c498a2"
+  integrity sha512-qkyRDs58lk4ODjisU34znkG8F6R8GQrq7PKb+tZif1exJcEdN916yT2F3ANWpOsiPR7JAa36W4zWW+MweqLAcg==
+
 "@react-navigation/native@^6.0.0-next.2":
   version "6.0.0-next.2"
   resolved "https://registry.npmjs.org/@react-navigation/native/-/native-6.0.0-next.2.tgz"
@@ -5526,11 +5531,6 @@ react-navigation-header-buttons@^7.0.1:
   integrity sha512-ggIXhshnRv3Kaqw1ZlZLqMPtBOsLY4FLxxEOCHKe/XuWVfZGPmMqZBC/S4H8cQgIGRyFNOrypXF69Hb7fXMWNg==
   dependencies:
     invariant ">=2"
-
-react-navigation-material-bottom-tabs@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/react-navigation-material-bottom-tabs/-/react-navigation-material-bottom-tabs-2.3.4.tgz#fddcd1c3de9355e6c527a612b23dfb4319f6380b"
-  integrity sha512-NHHFsDg8AJupfPJ2ybIjCzT8VifBFd0LXxAO+RBermtHF2wrHVyFIcpTnYDr1WHgwwRAOrKKg1Hd2TG7TjX6Bg==
 
 react-refresh@^0.4.0:
   version "0.4.3"
