@@ -17,7 +17,7 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       shifting={true}
-      tabBarOptions={{ activeTintColor: Colors.accentColor }}
+      tabBarOptions={{ activeTintColor: 'white' }}
       barStyle={{ backgroundColor: Colors.primaryColor }}>
       <Tab.Screen
         name="Meals"
@@ -26,6 +26,7 @@ const TabNavigator = () => {
           tabBarIcon: tabInfo => (
             <Icon name="ios-restaurant" size={25} color={tabInfo.color} />
           ),
+          tabBarColor: Colors.primaryColor,
           headerShown: false,
         }}
       />
@@ -36,6 +37,7 @@ const TabNavigator = () => {
           tabBarIcon: tabInfo => (
             <Icon name="ios-star" size={25} color={tabInfo.color} />
           ),
+          tabBarColor: Colors.accentColor,
           headerShown: false,
         }}
       />
