@@ -26,6 +26,7 @@ const TabNavigator = () => {
           tabBarIcon: tabInfo => (
             <Icon name="ios-restaurant" size={25} color={tabInfo.color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -35,6 +36,7 @@ const TabNavigator = () => {
           tabBarIcon: tabInfo => (
             <Icon name="ios-star" size={25} color={tabInfo.color} />
           ),
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
