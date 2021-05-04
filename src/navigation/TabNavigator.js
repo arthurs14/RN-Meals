@@ -17,7 +17,10 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       shifting={true}
-      tabBarOptions={{ activeTintColor: 'white' }}
+      tabBarOptions={{
+        activeTintColor:
+          Platform.OS === 'android' ? 'white' : Colors.accentColor,
+      }}
       barStyle={{ backgroundColor: Colors.primaryColor }}>
       <Tab.Screen
         name="Meals"
