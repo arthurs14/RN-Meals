@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import AllMealsStack from './MealsStackNavigator';
+import FavoritesStack from './FavoritesStack';
 import Favorites from '../screens/Favorites';
 import Colors from '../constants/Colors';
 
@@ -17,8 +18,8 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       shifting={true}
-      tabBarOptions={{
-        activeTintColor:
+      screenOptions={{
+        tabBarActiveTintColor:
           Platform.OS === 'android' ? 'white' : Colors.accentColor,
       }}
       barStyle={{ backgroundColor: Colors.primaryColor }}>
@@ -35,7 +36,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="My Favorites"
-        component={Favorites}
+        component={FavoritesStack}
         options={{
           tabBarIcon: tabInfo => (
             <Icon name="ios-star" size={25} color={tabInfo.color} />

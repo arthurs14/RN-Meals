@@ -9,7 +9,7 @@ import Colors from '../constants/Colors';
 
 const Stack = createStackNavigator();
 
-const StackNavigator = () => {
+const MealsStackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Categories"
@@ -28,4 +28,4 @@ const StackNavigator = () => {
   );
 };
 
-export default StackNavigator;
+export default MealsStackNavigator;
