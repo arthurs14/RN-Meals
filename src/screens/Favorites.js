@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Favorites = () => {
+const Favorites = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'My Favorites',
+    });
+  });
+
   return (
     <View style={styles.screen}>
       <Text>Favorites Screen</Text>
