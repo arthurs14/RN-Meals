@@ -14,8 +14,6 @@ const CategoryMeals = ({ navigation, route }) => {
     meal => meal.categoryIds.indexOf(categoryId) >= 0,
   );
 
-
-
   // Changes header styling and title to match the category
   useLayoutEffect(() => {
     navigation.setOptions({
