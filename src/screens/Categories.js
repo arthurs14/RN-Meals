@@ -12,7 +12,11 @@ const Categories = ({ navigation }) => {
       title: 'Meal Categories',
       headerLeft: () => (
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
-          <Item title="Menu" iconName="ios-menu" onPress={() => {}} />
+          <Item
+            title="Menu"
+            iconName="ios-menu"
+            onPress={() => navigation.toggleDrawer()}
+          />
         </HeaderButtons>
       ),
     });

@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 
 const FilteredNavigation = createStackNavigator();
 
-const FilterNavigator = (
+const FilterNavigator = () => (
   <FilteredNavigation>
     <FilteredNavigation.Screen name="Filters" component={FilterScreen} />
   </FilteredNavigation>
@@ -18,8 +18,14 @@ const FilterNavigator = (
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="MealsFavs" component={TabNavigator} />
-      <Drawer.Screen name="Filtered Meals" component={FilterNavigator} />
+      <Drawer.Screen 
+        name="MealsFavs" 
+        component={TabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Drawer.Screen name="Filtered Meals" component={FilterScreen} />
     </Drawer.Navigator>
   );
 };
