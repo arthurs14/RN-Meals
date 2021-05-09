@@ -1,12 +1,23 @@
 import React, { useLayoutEffect } from 'react';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import MealList from '../components/MealList';
 import { MEALS } from '../data/data';
+import HeaderButton from '../components/HeaderButton';
 
 const Favorites = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'My Favorites',
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Menu"
+            iconName="ios-menu"
+            onPress={() => navigation.toggleDrawer()}
+          />
+        </HeaderButtons>
+      ),
     });
   });
 

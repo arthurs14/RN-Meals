@@ -18,8 +18,8 @@ const FilterNavigator = () => (
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen 
-        name="MealsFavs" 
+      <Drawer.Screen
+        name="MealsFavs"
         component={TabNavigator}
         options={{
           headerShown: false,
