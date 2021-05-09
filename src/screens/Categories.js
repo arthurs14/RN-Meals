@@ -1,13 +1,20 @@
 import React, { useLayoutEffect } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import { CATEGORIES } from '../data/data';
 import CategoryGrid from '../components/CategoryGrid';
+import HeaderButton from '../components/HeaderButton';
 
 const Categories = ({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Meal Categories',
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item title="Menu" iconName="ios-menu" onPress={() => {}} />
+        </HeaderButtons>
+      ),
     });
   }, [navigation]);
 
