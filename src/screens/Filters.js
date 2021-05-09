@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Filters = () => {
+const Filters = ({ navigation }) => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Filtered Meals',
+    });
+  }, [navigation]);
+
   return (
     <View style={styles.screen}>
       <Text>Filters Screen</Text>
