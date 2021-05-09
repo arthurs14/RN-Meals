@@ -6,7 +6,6 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import AllMealsStack from './MealsStackNavigator';
 import FavoritesStack from './FavoritesStack';
-import Favorites from '../screens/Favorites';
 import Colors from '../constants/Colors';
 
 const Tab =
