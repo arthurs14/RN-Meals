@@ -1134,6 +1134,15 @@
     query-string "^7.0.0"
     react-is "^16.13.0"
 
+"@react-navigation/drawer@^6.0.0-next.8":
+  version "6.0.0-next.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-6.0.0-next.8.tgz#f83d9a1a5547ddd7f84b8a5c0f1564336c8bc4bd"
+  integrity sha512-J3HdwJNFvMLPNiWiQZ/zuWgrLaQspKRCpi/3AGlku6Y/nQ829fbP1S0tFd3DJ8/QZpkggMhQxdPSqwgZ7rhDQw==
+  dependencies:
+    "@react-navigation/elements" "^1.0.0-next.8"
+    color "^3.1.3"
+    warn-once "^0.0.1"
+
 "@react-navigation/elements@^1.0.0-next.4":
   version "1.0.0-next.4"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.0-next.4.tgz#5f7e4181158f526a1b225badbac78f828ebf3f2d"
@@ -1143,6 +1152,11 @@
   version "1.0.0-next.5"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.0-next.5.tgz#bc2e05c19aa2ffc36c14fc8a7f539b44304e983e"
   integrity sha512-1IpmuU8akVOjy+zj8ROZ/HVRzdTzv1X9aV9rmBWjs3DFps+k+6HYiSZT/UmSBv3NRYAcjIk46SPGUTdnVtxFmA==
+
+"@react-navigation/elements@^1.0.0-next.8":
+  version "1.0.0-next.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.0.0-next.8.tgz#7f73610afbca4b5e174babfbfe5408d30e71c051"
+  integrity sha512-JwrIndlyfC+Fr1ZChmXgqzYcguYZs0soUQkwFMB43YeWG1L+KMmxgVhIPl5J9kB+tHDjnRKJ2hp9w6FC8xqfJw==
 
 "@react-navigation/material-bottom-tabs@^6.0.0-next.3":
   version "6.0.0-next.3"

@@ -12,7 +12,7 @@ const Favorites = ({ navigation }) => {
 
   // dummy test to show something showing in favorites
   const favoritedMeals = MEALS.filter(
-    meal => meal.id === 'm1' || meal.id === 'm.2',
+    meal => meal.id === 'm1' || meal.id === 'm2',
   );
 
   return <MealList listData={favoritedMeals} navigation={navigation} />;
