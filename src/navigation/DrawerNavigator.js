@@ -15,9 +15,10 @@ const DrawerNavigator = () => {
         component={TabNavigator}
         options={{
           headerShown: false,
+          drawerLabel: 'Meals',
         }}
       />
-      <Drawer.Screen name="Filtered Meals" component={FilterScreen} />
+      <Drawer.Screen name="Filters" component={FilterScreen} />
     </Drawer.Navigator>
   );
 };
