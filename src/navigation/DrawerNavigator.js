@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="Filters Meal" component={FilterScreen} />
     </Stack.Navigator>
   );
@@ -26,6 +26,9 @@ const DrawerNavigator = () => {
         ...screenOptions,
         drawerActiveTintColor: Colors.accentColor,
         drawerActiveBackgroundColor: 'white',
+        drawerLabelStyle: {
+          fontFamily: 'OpenSans-Bold',
+        },
       }}>
       <Drawer.Screen
         name="MealsFavs"
