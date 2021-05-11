@@ -50,7 +50,7 @@ const TabNavigator = () => {
             <Icon name="ios-star" size={25} color={tabInfo.color} />
           ),
           tabBarColor: Colors.accentColor,
-          tabBarLabel: 
+          tabBarLabel:
             Platform.OS === 'android' ? (
               <Text style={{ fontFamily: 'OpenSans-Bold' }}>Favorites</Text>
             ) : (
