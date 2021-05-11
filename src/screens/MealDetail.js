@@ -35,9 +35,13 @@ const MealDetail = ({ navigation, route }) => {
         <DefaultText>{selectedMeal.affordability.toUpperCase()}</DefaultText>
       </View>
       <Text style={styles.title}>Ingredients</Text>
-      <Text>List of ingredients...</Text>
+      {selectedMeal.ingredients.map(ingredient => (
+        <Text key={ingredient}>{ingredient}</Text>
+      ))}
       <Text style={styles.title}>Steps</Text>
-      <Text>List of steps...</Text>
+      {selectedMeal.steps.map(step => (
+        <Text key={step}>{step}</Text>
+      ))}
     </ScrollView>
   );
 };
@@ -51,6 +55,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     justifyContent: 'space-around',
+  },
+  title: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 22,
+    textAlign: 'center',
   },
 });
 
