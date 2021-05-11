@@ -1,10 +1,30 @@
-import React, { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet, Switch } from 'react-native';
+import React, { useState, useLayoutEffect } from 'react';
+import { View, Text, StyleSheet, Switch, Platform } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import HeaderButton from '../components/HeaderButton';
+import Colors from '../constants/Colors';
+
+const FilterSwitch = ({ label, state, onChange }) => {
+  return (
+    <View style={styles.filterContainer}>
+      <Text>{label}</Text>
+      <Switch
+        trackColor={{ true: Colors.primaryColor }}
+        thumbColor={Platform.OS === 'android' ? Colors.primaryColor : ''}
+        value={state}
+        onValueChange={onChange}
+      />
+    </View>
+  );
+};
 
 const Filters = ({ navigation }) => {
+  const [isGlutenFree, setIsGlutenFree] = useState(false);
+  const [isLactoseFree, setIsLactoseFree] = useState(false);
+  const [isVegan, setIsVegan] = useState(false);
+  const [isVegetarian, setIsVegetarian] = useState(false);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Filtered Meals',
@@ -23,10 +43,26 @@ const Filters = ({ navigation }) => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Avalable Filters / Restrictions</Text>
-      <View style={styles.filterContainer}>
-        <Text>Gluten-Free</Text>
-        <Switch />
-      </View>
+      <FilterSwitch
+        label="Gluten-Free"
+        state={isGlutenFree}
+        onChange={newValue => setIsGlutenFree(newValue)}
+      />
+      <FilterSwitch
+        label="Lactose-Free"
+        state={isLactoseFree}
+        onChange={newValue => setIsLactoseFree(newValue)}
+      />
+      <FilterSwitch
+        label="Vegan"
+        state={isVegan}
+        onChange={newValue => setIsVegan(newValue)}
+      />
+      <FilterSwitch
+        label="Vegetarian"
+        state={isVegetarian}
+        onChange={newValue => setIsVegetarian(newValue)}
+      />
     </View>
   );
 };
