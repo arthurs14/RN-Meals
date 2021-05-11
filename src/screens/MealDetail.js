@@ -6,6 +6,14 @@ import { MEALS } from '../data/data';
 import HeaderButton from '../components/HeaderButton';
 import DefaultText from '../components/DefaultText';
 
+const ListItem = props => {
+  return (
+    <View style={styles.listItem}>
+      <DefaultText>{props.children}</DefaultText>
+    </View>
+  );
+};
+
 const MealDetail = ({ navigation, route }) => {
   const { mealId } = route.params;
 
@@ -36,11 +44,11 @@ const MealDetail = ({ navigation, route }) => {
       </View>
       <Text style={styles.title}>Ingredients</Text>
       {selectedMeal.ingredients.map(ingredient => (
-        <Text key={ingredient}>{ingredient}</Text>
+        <ListItem key={ingredient}>{ingredient}</ListItem>
       ))}
       <Text style={styles.title}>Steps</Text>
       {selectedMeal.steps.map(step => (
-        <Text key={step}>{step}</Text>
+        <ListItem key={step}>{step}</ListItem>
       ))}
     </ScrollView>
   );
@@ -60,6 +68,13 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontSize: 22,
     textAlign: 'center',
+  },
+  listItem: {
+    marginVertical: 10,
+    marginHorizontal: 20,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    padding: 10,
   },
 });
 
