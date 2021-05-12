@@ -30,6 +30,7 @@ const Filters = ({ navigation, route }) => {
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
+  // prevents from repeating and only changing when updated
   const saveFilters = useCallback(() => {
     const appliedFilters = {
       glutenFree: isGlutenFree,
@@ -41,6 +42,7 @@ const Filters = ({ navigation, route }) => {
     console.log(appliedFilters);
   }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
 
+  // used to update params without re-rendering
   useEffect(() => {
     navigation.setParams({ save: saveFilters });
   }, [navigation, saveFilters]);
