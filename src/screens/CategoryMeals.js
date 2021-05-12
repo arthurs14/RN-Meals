@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import { CATEGORIES, MEALS } from '../data/data';
+import { CATEGORIES } from '../data/data';
 import MealList from '../components/MealList';
 
 const CategoryMeals = ({ navigation, route }) => {
@@ -10,7 +11,9 @@ const CategoryMeals = ({ navigation, route }) => {
     category => category.id === categoryId,
   );
 
-  const displayMeals = MEALS.filter(
+  const availableMeals = useSelector(state => state.meals.filteredMeals);
+
+  const displayMeals = availableMeals.filter(
     meal => meal.categoryIds.indexOf(categoryId) >= 0,
   );
 
