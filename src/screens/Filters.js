@@ -25,6 +25,17 @@ const Filters = ({ navigation }) => {
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
+  const saveFilters = () => {
+    const appliedFilters = {
+      glutenFree: isGlutenFree,
+      lactoseFree: isLactoseFree,
+      vegan: isVegan,
+      vegetarian: isVegetarian,
+    };
+
+    console.log(appliedFilters);
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Filtered Meals',
@@ -34,6 +45,15 @@ const Filters = ({ navigation }) => {
             title="Menu"
             iconName="ios-menu"
             onPress={() => navigation.toggleDrawer()}
+          />
+        </HeaderButtons>
+      ),
+      headerRight: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Save"
+            iconName="ios-save"
+            onPress={() => console.log('saving filters')}
           />
         </HeaderButtons>
       ),
