@@ -1,15 +1,25 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 import DrawerNavigator from './src/navigation/DrawerNavigator';
-import TabNavigator from './src/navigation/TabNavigator';
+import mealsReducer from './src/store/reducers/meals';
+
+const rootReducer = combineReducers({
+  meals: mealsReducer,
+});
+
+const store = createStore(rootReducer);
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 };
 
