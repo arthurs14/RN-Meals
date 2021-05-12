@@ -1,4 +1,9 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useLayoutEffect,
+} from 'react';
 import { View, Text, StyleSheet, Switch, Platform } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
@@ -19,13 +24,13 @@ const FilterSwitch = ({ label, state, onChange }) => {
   );
 };
 
-const Filters = ({ navigation }) => {
+const Filters = ({ navigation, route }) => {
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
-  const saveFilters = () => {
+  const saveFilters = useCallback(() => {
     const appliedFilters = {
       glutenFree: isGlutenFree,
       lactoseFree: isLactoseFree,
@@ -34,7 +39,11 @@ const Filters = ({ navigation }) => {
     };
 
     console.log(appliedFilters);
-  };
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+
+  useEffect(() => {
+    navigation.setParams({ save: saveFilters });
+  }, [navigation, saveFilters]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -50,15 +59,11 @@ const Filters = ({ navigation }) => {
       ),
       headerRight: () => (
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
-          <Item
-            title="Save"
-            iconName="ios-save"
-            onPress={() => console.log('saving filters')}
-          />
+          <Item title="Save" iconName="ios-save" onPress={route.params.save} />
         </HeaderButtons>
       ),
     });
-  }, [navigation]);
+  }, [navigation, route]);
 
   return (
     <View style={styles.screen}>
