@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useSelector } from 'react-redux';
 
 import MealList from '../components/MealList';
 import { MEALS } from '../data/data';
@@ -21,12 +22,9 @@ const Favorites = ({ navigation }) => {
     });
   });
 
-  // dummy test to show something showing in favorites
-  const favoritedMeals = MEALS.filter(
-    meal => meal.id === 'm1' || meal.id === 'm2',
-  );
+  const favoriteMeals = useSelector(state => state.meals.favoriteMeals);
 
-  return <MealList listData={favoritedMeals} navigation={navigation} />;
+  return <MealList listData={favoriteMeals} navigation={navigation} />;
 };
 
 export default Favorites;
