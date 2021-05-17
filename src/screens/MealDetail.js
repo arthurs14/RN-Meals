@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { ScrollView, Image, View, Text, StyleSheet } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { useSelector } from 'react-redux';
@@ -16,10 +16,12 @@ const ListItem = props => {
 
 const MealDetail = ({ navigation, route }) => {
   const { mealId } = route.params;
-
   const availableMeals = useSelector(state => state.meals.meals);
-
   const selectedMeal = availableMeals.find(meal => meal.id === mealId);
+
+  useEffect(() => {
+    navigation.setParams({ mealTitle: selectedMeal.title });
+  }, [navigation, selectedMeal]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
