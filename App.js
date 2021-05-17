@@ -5,7 +5,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import DrawerNavigator from './src/navigation/DrawerNavigator';
-import mealsReducer from './src/store/reducers/meals';
+import mealsReducer from './src/store/reducers/mealsReducer';
 
 const rootReducer = combineReducers({
   meals: mealsReducer,
