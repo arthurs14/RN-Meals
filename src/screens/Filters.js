@@ -47,6 +47,8 @@ const Filters = ({ navigation, route }) => {
     navigation.setParams({ save: saveFilters });
   }, [navigation, saveFilters]);
 
+  //const { save } = route.params;
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Filtered Meals',
