@@ -47,8 +47,6 @@ const Filters = ({ navigation, route }) => {
     navigation.setParams({ save: saveFilters });
   }, [navigation, saveFilters]);
 
-  //const { save } = route.params;
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Filtered Meals',
@@ -63,7 +61,7 @@ const Filters = ({ navigation, route }) => {
       ),
       headerRight: () => (
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
-          <Item title="Save" iconName="ios-save" onPress={route.params.save} />
+          <Item title="Save" iconName="ios-save" onPress={route.params?.save} />
         </HeaderButtons>
       ),
     });

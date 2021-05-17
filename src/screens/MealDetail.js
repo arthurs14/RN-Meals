@@ -38,7 +38,7 @@ const MealDetail = ({ navigation, route }) => {
           <Item
             title="Favorite"
             iconName="ios-star"
-            onPress={route.params.toggleFav}
+            onPress={route.params?.toggleFav}
           />
         </HeaderButtons>
       ),
