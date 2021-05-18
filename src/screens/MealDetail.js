@@ -39,6 +39,7 @@ const MealDetail = ({ navigation, route }) => {
 
   useLayoutEffect(() => {
     const isFavorite = route.params?.isFav;
+    const togFavorite = route.params?.toggleFav;
 
     navigation.setOptions({
       title: selectedMeal.title,
@@ -47,7 +48,7 @@ const MealDetail = ({ navigation, route }) => {
           <Item
             title="Favorite"
             iconName={isFavorite ? 'ios-star' : 'ios-star-outline'}
-            onPress={route.params?.toggleFav}
+            onPress={togFavorite}
           />
         </HeaderButtons>
       ),
