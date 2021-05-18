@@ -18,6 +18,9 @@ const ListItem = props => {
 const MealDetail = ({ navigation, route }) => {
   const { mealId } = route.params;
   const availableMeals = useSelector(state => state.meals.meals);
+  const currentMealIsFavorite = useSelector(state =>
+    state.meals.favoriteMeals.some(meal => meal.id === mealId),
+  );
   const selectedMeal = availableMeals.find(meal => meal.id === mealId);
 
   const dispatch = useDispatch();
@@ -30,14 +33,20 @@ const MealDetail = ({ navigation, route }) => {
     navigation.setParams({ toggleFav: toggleFavoriteHandler });
   }, [navigation, toggleFavoriteHandler]);
 
+  useEffect(() => {
+    navigation.setParams({ isFav: currentMealIsFavorite });
+  }, [navigation, currentMealIsFavorite]);
+
   useLayoutEffect(() => {
+    const isFavorite = route.params?.isFav;
+
     navigation.setOptions({
       title: selectedMeal.title,
       headerRight: () => (
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
           <Item
             title="Favorite"
-            iconName="ios-star"
+            iconName={isFavorite ? 'ios-star' : 'ios-star-outline'}
             onPress={route.params?.toggleFav}
           />
         </HeaderButtons>
