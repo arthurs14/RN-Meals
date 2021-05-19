@@ -26,9 +26,23 @@ const CategoryMeals = ({ navigation, route }) => {
     });
   }, [navigation, selectedCategory]);
 
+  if (displayMeals.length === 0) {
+    return (
+      <View style={styles.content}>
+        <DefaultText>No meals found - check your filters!</DefaultText>
+      </View>
+    );
+  }
+
   return <MealList listData={displayMeals} navigation={navigation} />;
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default CategoryMeals;
