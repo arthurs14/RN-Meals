@@ -6,9 +6,11 @@ import React, {
 } from 'react';
 import { View, Text, StyleSheet, Switch, Platform } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useDispatch } from 'react-redux';
 
 import HeaderButton from '../components/HeaderButton';
 import Colors from '../constants/Colors';
+import { setFilters } from '../store/actions/mealsActions';
 
 const FilterSwitch = ({ label, state, onChange }) => {
   return (
@@ -30,6 +32,8 @@ const Filters = ({ navigation, route }) => {
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
+  const dispatch = useDispatch();
+
   // prevents from repeating and only changing when updated
   const saveFilters = useCallback(() => {
     const appliedFilters = {
@@ -39,8 +43,8 @@ const Filters = ({ navigation, route }) => {
       vegetarian: isVegetarian,
     };
 
-    console.log(appliedFilters);
-  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+    dispatch(setFilters(appliedFilters));
+  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian, dispatch]);
 
   // used to update params without re-rendering
   useEffect(() => {
