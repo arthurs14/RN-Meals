@@ -1,8 +1,10 @@
 import React, { useLayoutEffect } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { CATEGORIES } from '../data/data';
 import MealList from '../components/MealList';
+import DefaultText from '../components/DefaultText';
 
 const CategoryMeals = ({ navigation, route }) => {
   const { categoryId } = route.params;
@@ -26,5 +28,7 @@ const CategoryMeals = ({ navigation, route }) => {
 
   return <MealList listData={displayMeals} navigation={navigation} />;
 };
+
+const styles = StyleSheet.create({});
 
 export default CategoryMeals;
